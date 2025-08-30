@@ -18,10 +18,11 @@ function saveNote() {
     }
 }
 
-// Función para cargar notas guardadas
+// Función para cargar notas guardadas desde localStorage al iniciar el script
 function loadNotes() {
     const savedNotes = localStorage.getItem('notes');
     if (savedNotes) {
+        // Cargar las notas almacenadas en la lista
         notesList.innerHTML = savedNotes;
     }
 }
