@@ -14,7 +14,13 @@ function saveNote() {
         notesList.appendChild(li);
         noteInput.value = '';
         // Guardar la lista de notas en localStorage
-        localStorage.setItem('notes', notesList.innerHTML);
+        try {
+            localStorage.setItem('notes', notesList.innerHTML);
+        } catch (e) {
+            console.error('Error guardando notas en localStorage:', e);
+        }
+    } else {
+        console.warn('No se puede guardar una nota vacía.');
     }
 }
 
